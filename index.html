@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBER ONI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-wrapper" id="gameWrapper">
+        
+        <div class="left-controls">
+            <div class="dpad-cross">
+                <button id="up" class="dpad-btn">▲</button>
+                <div class="dpad-row">
+                    <button id="left" class="dpad-btn">◀</button>
+                    <button id="right" class="dpad-btn">▶</button>
+                </div>
+                <button id="down" class="dpad-btn">▼</button>
+            </div>
+        </div>
+
+        
+
+        <div class="game-main-content">
+            <div class="game-header">
+           <div class="stats-panel">
+
+                    <div class="timer-row">TIME: <span id="timerDisplay">0.00s</span></div>
+
+                    <div class="stats-grid">
+
+                        <div class="stat-item"><span class="glow-speed">⚡</span> Speed: <span id="statSpeed">1.8</span></div>
+
+                <div class="stat-item"><span class="glow-bomb">💣</span> Max Bombs: <span id="statBombs">1</span></div>
+
+                <div class="stat-item"><span class="glow-fire">🔥</span> Fire Blast: <span id="statFire">1</span></div>
+
+                <div class="stat-item"><span class="glow-boss">👑</span> Boss Life: <span id="statBossHp">10/10</span></div>
+
+                    </div>
+
+                </div>
+
+               
+
+  
+                <div class="live-monitor-box">
+                    <div class="monitor-label">LIVE STATUS</div>
+                    <canvas id="monitorCanvas" width="90" height="90"></canvas>
+                                        <div class="stat-item">
+
+     <div class="health-bar-container"> <div id="statPlayerHpBar" class="health-bar-fill"></div>
+
+    </div>
+
+</div>
+                </div>
+
+                <button id="btnHeaderRetry" class="btn-ctrl">RESET</button>
+                
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="gameCanvas"></canvas>
+                <div id="endScreen" class="overlay" style="display: none;">
+                    <h1 id="endStatusText">GAME OVER</h1>
+                    <p id="endScoreText"></p>
+                    <button id="btnTryAgain">Try Again</button>
+                </div>  
+            </div>
+        </div>
+
+
+        <div class="right-controls">
+            <button id="bombBtn" class="bomb-btn">💣</button>
+        </div>
+    </div>
+    </div>
+    
+
+    <div style="display: none;">
+        
+        <img id="bossImg" src="boss.png">
+       
+        <img id="playerIdleImg" src="player_idle.jpg" crossorigin="anonymous">
+        <video id="playerWalkVideo" src="player_walk.mp4" muted playsinline autoplay></video>
+        <video id="bossWalkVideo" src="bos_walk.mp4" autoplay loop muted playsinline></video>
+        <audio id="sfxMove" src="sfx_move.mp3" loop></audio>
+        
+        <audio id="sfxBossDefeated" src="sfx_boss_defeated.mp3"></audio>
+        <audio id="sfxDefeat" src="sfx_defeat.mp3"></audio>
+        <audio id="sfxVictory" src="victory.mp3"></audio>
+        <audio id="bgmGame" src="bgm_game.mp3" loop></audio>
+        <audio id="sfxPlaceBomb" src="place.mp3"></audio>
+        <audio id="sfxExplosion" src="explosion.mp3"></audio>
+        <audio id="sfxPlayerHit" src="aray_0.mp3"></audio>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
