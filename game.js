@@ -58,12 +58,20 @@ function setupButtonControls() {
             });
         });
     });
-
-    // Bomb Button handler
+// Bomb Button handler (REPLACE YOUR OLD ONE WITH THIS)
     const bombBtn = document.getElementById('bombBtn');
-    bombBtn.addEventListener('click', (e) => {
+    
+    // Add touchstart for instant response and multi-touch support
+    bombBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault(); // Prevents the browser from focusing on the button
+        if (typeof plantBomb === 'function') {
+            plantBomb(); 
+        }
+    }, { passive: false });
+
+    // Optional: add mousedown for desktop testing
+    bombBtn.addEventListener('mousedown', (e) => {
         e.preventDefault();
-        // Call your existing plantBomb function here
         if (typeof plantBomb === 'function') {
             plantBomb(); 
         }
