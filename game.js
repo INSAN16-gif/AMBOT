@@ -273,31 +273,31 @@ function initGame() {
     }
 
     // 7. Reset Player/Boss
-    player = { x: 3, y: 3, size: 20, renderSize: 54, speed: 4, maxBombs: 1, fireRange: 1, hasWon: false, hp:7, maxHp: 7, invulnerable: false };
+    player = { x: 3, y: 3, size: 20, renderSize: 54, speed: 4, maxBombs: 1, fireRange: 1, hasWon: false, hp:10, maxHp: 10, invulnerable: false };
     enemies =[
-        { x: 0*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 1.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red' },
-        { x: 0*TILE_SIZE+4, y: 6*TILE_SIZE+4, size: 22, speed: 1.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red' },
-        { x: 0*TILE_SIZE+4, y: 7*TILE_SIZE+4, size: 22, speed: 1.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red' },
-        { x: 0*TILE_SIZE+4, y: 8*TILE_SIZE+4, size: 22, speed: 1.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red'},
+        { x: 0*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 1, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red' },
+        { x: 0*TILE_SIZE+4, y: 6*TILE_SIZE+4, size: 22, speed: 1, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red' },
+        { x: 0*TILE_SIZE+4, y: 7*TILE_SIZE+4, size: 22, speed: 1, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red' },
+        { x: 0*TILE_SIZE+4, y: 8*TILE_SIZE+4, size: 22, speed: 1, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'red'},
 
-        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 2.5, hp: 3, maxHp: 3, dirX: 1, dirY: 0, type: 'pink' },
-        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 2.5, hp: 3, maxHp: 3, dirX: 1, dirY: 0, type: 'pink' },
-        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 2.5, hp: 3, maxHp: 3, dirX: 1, dirY: 0, type: 'pink' },
-        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 2.5, hp: 3, maxHp: 3, dirX: 1, dirY: 0, type: 'pink' },
+        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 3, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'pink' },
+        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 3, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'pink' },
+        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 3, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'pink' },
+        { x: 4*TILE_SIZE+4, y: 5*TILE_SIZE+4, size: 22, speed: 3, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'pink' },
 
-        { x: 8*TILE_SIZE+4, y: 10*TILE_SIZE+4, size: 27, speed: 4.5, hp: 4, maxHp: 4, dirX: 1, dirY: 0, type: 'cyan' },
-        { x: 9*TILE_SIZE+4, y: 10*TILE_SIZE+4, size: 27, speed: 4.5, hp: 4, maxHp: 4, dirX: 1, dirY: 0, type: 'cyan' },
+        { x: 8*TILE_SIZE+4, y: 10*TILE_SIZE+4, size: 27, speed: 5, hp: 4, maxHp: 4, dirX: 1, dirY: 0, type: 'cyan' },
+        { x: 9*TILE_SIZE+4, y: 10*TILE_SIZE+4, size: 27, speed: 5, hp: 4, maxHp: 4, dirX: 1, dirY: 0, type: 'cyan' },
    
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
-        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 6.5, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
+        { x: 15*TILE_SIZE+4, y: 0*TILE_SIZE+4, size: 18, speed: 7, hp: 2, maxHp: 2, dirX: 1, dirY: 0, type: 'orange' },
     
     ];
     boss = { x: 16*TILE_SIZE+2, y: 5*TILE_SIZE+2, size: 38, baseSpeed: 1.9, speed: 1.9, hp: 10, maxHp: 10, dirX: -1, dirY: 0, lastBombDropped: 0, bombCooldown: 3000, lastFlameShot: 0, flameCooldown: 5000, isEscaping: false, escapeTimer: 0 };
