@@ -200,7 +200,12 @@ body {
         right: 0%; /* Bomb button right */
         padding-top: 0 !important;
     }
-
+/* Apply to all buttons and the control containers */
+.dpad-btn, .bomb-btn, .left-controls, .right-controls {
+    touch-action: none; /* Crucial: Prevents browser from treating touches as gestures/scrolls */
+    -webkit-tap-highlight-color: transparent; /* Removes the blue flash when tapping */
+    user-select: none;
+}
     /* Buttons sizing for mobile */
     .dpad-btn { width: 130px !important; height: 120px !important; font-size: 40px !important; }
     .bomb-btn { width: 160px !important; height: 160px !important; font-size: 60px !important; }
